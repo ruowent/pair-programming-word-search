@@ -35,4 +35,75 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("should return true if the word is present", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'A', 'F', 'E', 'L', 'D'],
+      ['Y', 'F', 'C', 'P', 'Q', 'U', 'A', 'L'],
+      ['H', 'M', 'J', 'P', 'E', 'V', 'R', 'G'],
+      ['W', 'H', 'C', 'L', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'APPLE')
+
+    assert.isTrue(result);
+  });
+
+  it("should return true if the word is present (in rever  se)", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'A', 'F', 'E', 'L', 'D'],
+      ['Y', 'F', 'C', 'P', 'Q', 'U', 'A', 'L'],
+      ['H', 'M', 'E', 'L', 'P', 'P', 'A', 'G'],
+      ['W', 'H', 'C', 'L', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'R', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'APPLE')
+
+    assert.isTrue(result);
+  });
+
+  it("should return true if the word is present (diagonally left-to-right)", function() {
+    const result = wordSearch([
+      ['A', 'W', 'A', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'A', 'I', 'P', 'F', 'E', 'L', 'D'],
+      ['Y', 'F', 'C', 'P', 'P', 'U', 'A', 'L'],
+      ['H', 'M', 'E', 'B', 'P', 'L', 'A', 'G'],
+      ['W', 'H', 'C', 'L', 'Y', 'E', 'E', 'L'],
+      ['B', 'F', 'R', 'R', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'APPLE')
+
+    assert.isTrue(result);
+  });
+
+  it("should return true if the word is present (diagonally right-to-left)", function() {
+    const result = wordSearch([
+      ['A', 'W', 'A', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'A', 'I', 'S', 'F', 'P', 'L', 'D'],
+      ['Y', 'F', 'C', 'P', 'P', 'U', 'A', 'L'],
+      ['H', 'M', 'E', 'L', 'P', 'L', 'A', 'G'],
+      ['W', 'H', 'E', 'L', 'Y', 'E', 'E', 'L'],
+      ['B', 'F', 'R', 'R', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'APPLE')
+
+    assert.isTrue(result);
+  });
+
+  it("should return true if array is empty or input value is undefined", function() {
+    const result = wordSearch([], undefined)
+
+    assert.isUndefined(result);
+  });
+
 });
