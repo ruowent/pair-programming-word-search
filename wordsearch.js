@@ -22,16 +22,12 @@ const wordSearch = (letters, word) => {
 	}
 
 	// check if diagonal left-to-right
-
 	for (let i = 0; i < letters.length; i++) {
 		let newArr = [];
 		for (let j = 0; j < letters.length; j++) {
 			newArr.push(letters[j][j+i]);
-
 	}
-
 		if (newArr.join('').includes(word)) return true;
-
 	}
 	
 	// check if vertial top-to-bottom
@@ -54,6 +50,12 @@ const wordSearch = (letters, word) => {
 		}
 		if (newArr.join('').includes(word)) return true;
 	}
+
+	// check if vertial bottom-to-top
+	const vertivalReverseJoin = transpose(letters.reverse()).map(ls => ls.join(''));
+	for (let l of vertivalReverseJoin) {
+		if (l.includes(word)) return true;
+	};
 
 	// if nothing matched, return false
 	return false;
